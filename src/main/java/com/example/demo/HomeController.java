@@ -12,11 +12,9 @@ import jakarta.servlet.http.HttpSession;
 public class HomeController {
 	
 	@RequestMapping("home")
-	public ModelAndView home(String aid, String aname, String lang) {
+	public ModelAndView home(Alien alien) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("aid", aid);
-		mv.addObject("aname", aname);
-		mv.addObject("lang", lang);
+		mv.addObject("obj", alien);
 		mv.setViewName("home");
 		return mv;
 	}
